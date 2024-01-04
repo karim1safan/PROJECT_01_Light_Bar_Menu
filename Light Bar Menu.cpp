@@ -113,6 +113,7 @@ int main()
         }
 
     } while (ch != ENTER_PRESSED);
+
     SetConsoleTextAttribute(console, BLACK_COLOR);
     gotoxy(30, 22);
     cout << "Your selection is: " << pos << endl;
