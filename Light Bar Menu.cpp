@@ -30,6 +30,7 @@ int main()
 
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE); 
     setConsoleCursorVisibility(0);                       // Make The Cursor Invisible
+    
     draw_box();
 
     char ch;
@@ -37,7 +38,7 @@ int main()
     
     do
     {
-        SetConsoleTextAttribute(console, BLACK_COLOR);
+        SetConsoleTextAttribute(console, BLACK_COLOR);  // Make The Console Black 
 
         gotoxy(30, 11);
         cout << " 1] Add a new record            *  ";
@@ -51,7 +52,7 @@ int main()
         cout << " 5] Insert a new record         *  ";
         gotoxy(30, 16);
         cout << " 6] Delete an existing record   *  ";
-        gotoxy(30, 17);
+        gotoxy(30, 18);
         cout << " 7] Exit                        *  ";
 
         switch (pos)
@@ -87,13 +88,13 @@ int main()
             cout << " 6] Delete an existing record   *  ";
             break;
         case 7:
-            gotoxy(30, 17);
+            gotoxy(30, 18);
             SetConsoleTextAttribute(console, WHITE_COLOR);
             cout << " 7] Exit                        *  ";
             break;
         }
 
-        ch = _getch();
+        ch = _getch();      // Controling In The Kewbord Arrows [up, down, enter]
 
         // if the user doesn't input char, takse from hem another input
         if (ch == NO_ARROW_PRESSED)
@@ -112,7 +113,7 @@ int main()
         }
 
     } while (ch != ENTER_PRESSED);
-    
+    SetConsoleTextAttribute(console, BLACK_COLOR);
     gotoxy(30, 22);
     cout << "Your selection is: " << pos << endl;
 }
